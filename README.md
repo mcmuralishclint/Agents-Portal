@@ -32,3 +32,6 @@ the payment method will be very secure and the students can track their scholars
 - Update and track applied students
 - Upload documents
 - Search Engine
+
+p.s. I have deleted the files some pictures from the media folder, please delete the database and create a new super user.
+Will fix it in the next commit
