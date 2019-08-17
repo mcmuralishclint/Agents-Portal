@@ -1,0 +1,42 @@
+{%extends 'dashboard/base.html'%}
+{%load staticfiles%}
+{% load socialaccount %}
+{% load crispy_forms_tags %}
+{%block title%}Agent Profile{%endblock%}
+{%block description%}View the agent's profile details{%endblock%}
+{%block content%}
+
+{%if featured != None %}
+
+	<section id="featured">
+	<div class="container pricing-container">
+	<div class="row">
+		{%for account in featured%}
+	  <div class="pricing-column col-lg-4 col-md-6">
+	    <div class="card h-100">
+
+	      <div class="card-header">
+	        <img src="{{account.image.url}}">
+	      </div>
+	      <div class="card-body">
+	            <h3>{{account.user}}</h3>	
+	            <p class="lead">{{account.country}}</p>
+	            <strong class="agent-name"><a href="{%url 'user:profile' id=account.id%}">Talk to me</a></strong>
+	        {{scholarship.agent}}</a></strong>
+	      </div>
+	     
+	    </div>
+	  </div>
+	   {%endfor%}
+	 
+	  </div>
+	</div>
+  </section>
+
+{%else%}
+<br>
+<h3>No featured agents yet!</h3>
+<br>
+{%endif%}
+{%endblock%}
+

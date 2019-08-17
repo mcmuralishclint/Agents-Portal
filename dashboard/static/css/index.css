@@ -1,0 +1,203 @@
+
+
+.navbar-brand{
+	font-weight: bold;
+	font-size: 2em;
+	padding-top: 0
+}
+
+.navbar{
+	background-color: rgb(26,132,116);
+}
+
+#heading{
+	background-color: rgb(26,132,116);
+	text-align: center;
+	padding: 5% 15%;
+	color: white;
+	font-family: sans-serif;
+	font-size: 3em;
+}
+
+.header-image{
+	transform: rotate(30deg);
+	width: 50%
+}
+
+.header-description {
+font-family: "Rockwell Extra Bold";
+}
+
+/*featured*/
+#featured{
+	background-color: white;
+}
+
+.uni-name{
+	text-align: center;
+}
+img{
+	width: 75%;
+}
+
+/*about*/
+#about{
+	background-color: rgb(26,132,140);
+	padding: 5% 15%;
+	color: white;
+
+}
+
+.img-featured{
+	margin-top: 5% ;
+	text-align: center;
+}
+
+
+/*subscirbe*/
+#subscribe{
+	padding: 5% 15%;
+	text-align: center;
+}
+
+form{
+	padding: 5%;
+	width: 50%;
+	margin-left: 26%;
+
+}
+
+
+/*footer*/
+#footer{
+	background-color: #333;
+	color: white;
+	text-align: center;
+	padding: 5%;
+}
+
+
+
+/*advantage*/
+
+#features{
+	text-align: center;
+	padding: 5% 15%;
+}
+
+#features{
+	text-align: center;
+	background-color: #fff;
+	position: relative;
+}
+
+
+
+.icon{
+	color: rgb(26,132,116);
+	margin-bottom: 1rem;
+}
+.icon-verified{
+	color: rgb(0,162,232);
+}
+
+.icon:hover{
+	color: black;
+}
+
+
+/*about*/
+
+#about{
+	text-align: center;
+}
+
+
+/*card*/
+
+.card-header{
+	height: 60%;
+	max-height: 60%;
+}
+
+.card img{
+	width: auto;
+	height: 200px;
+	border-radius: 50%;
+}
+.card{
+	text-transform: capitalize;
+}
+#pricing{
+	text-align: center;
+	padding: 2% 3%;
+}
+
+.pricing h1{
+	
+}
+
+.agent-name{
+	text-transform: capitalize;
+}
+
+.pagination{
+	margin-left: 50%;
+}
+
+
+
+/*scholarship_view*/
+.scholarship-title{
+	text-align: center;
+
+}
+
+.university img{
+	width: 10%;
+	height: auto;
+	text-align: center;
+}
+
+.university{
+		padding-top: 2%;
+	text-align: center;
+	padding-bottom: 2%
+}
+
+/*Login*/
+.login-container{
+	padding-top:2%;	
+}
+
+.profile img{
+width: 10%;
+height: 10%;
+border-radius: 50%;
+}
+
+.profile{
+	text-align: center;
+}
+
+
+/*featured*/
+#featured{
+text-align: center;
+padding: 2% 3%;
+}
+
+
+/*profile*/
+.container-profile{
+	margin-top: 2%;
+	width: 40%; 
+	text-align: center; 
+	margin-bottom: 2%; 
+	margin-left: 30%
+}
+
+.contact{
+	padding-left: 10%;
+	display: inline-block;
+}

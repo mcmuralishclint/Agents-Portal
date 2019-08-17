@@ -1,0 +1,45 @@
+{%extends 'dashboard/base.html'%}
+{%load staticfiles%}
+{% load socialaccount %}
+{%block title%}Apply now!{%endblock%}
+{%block description%}Easy apply, View your agent, Click on apply now to submit your documents.{%endblock%}
+{%block content%}
+<div class="container university">
+<img class="logo" src="{{university.logo.url}}">
+<h1 class="scholarship-title">{{scholarship.university}}</h1><br>
+
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Before Scholarship</th>
+      <th scope="col">After Scholarship</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Tuition</th>
+      <td>{{university.tuition}} RMB</td>
+      <td>{{scholarship.tuition_after_schol}} RMB</td>
+    </tr>
+    <tr>
+      <th scope="row">Accomodation</th>
+      <td>{{university.accomodation}} RMB</td>
+      <td>{{scholarship.accomodation_after_schol}} RMB</td>
+    </tr>
+    <tr>
+      <th scope="row">Stipend</th>
+      <td>0 RMB</td>
+      <td>{{scholarship.stipend}} RMB</td>
+    </tr>
+    </tbody>
+</table>
+<br>
+{{university.about}}<br><br>
+<a href="{%url 'user:profile' id=scholarship.agent.user_detail.id%}" class="btn btn-primary btn-lg" role="button">View Agent</a>
+<a href="" class="btn btn-outline-primary btn-lg" role="button">Apply Now</a>
+</div>
+
+
+{%endblock%}

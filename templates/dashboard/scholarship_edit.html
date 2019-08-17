@@ -1,0 +1,14 @@
+{%extends 'dashboard/base.html'%}
+{%load staticfiles%}
+{% load socialaccount %}
+{% load crispy_forms_tags %}
+{%block title%}Welcome to letsrise student's consultancy{%endblock%}
+{%block description%}We help students from all over the world find scholarships in China at an affordable cost.{%endblock%}
+{%block content%}
+
+<form method="POST">
+{%csrf_token%}
+{{form|crispy}}
+<button class="btn btn-primary btn-lg float-right">Update</button>
+</form>
+{%endblock%}

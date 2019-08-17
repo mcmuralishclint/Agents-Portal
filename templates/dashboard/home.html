@@ -1,0 +1,49 @@
+{%extends 'dashboard/base.html'%}
+{%load staticfiles%}
+{% load socialaccount %}
+
+{%block title%}Welcome to letsrise student's consultancy{%endblock%}
+{%block description%}We help students from all over the world find scholarships in China at an affordable cost.{%endblock%}
+{%block content%}
+
+
+ <section id="features">
+    <div class="row features-row">
+    <div class="col-md-4">
+    <i class="icon fa fa-star fa-4x"></i>  
+    <h3>Cheap</h3>
+    <p class="lead">Cheaper than our competitors</p>
+    </div>
+    <div class="col-md-4">
+    <i class="icon fa fa-first-order fa-4x"></i> 
+    <h3>Quick</h3>
+    <p class="lead">Admission letter in 2 days</p>
+    </div>
+    <div class="col-md-4">
+    <i class="icon fa fa-percent fa-4x"></i> 
+    <h3>Services</h3>
+    <p class="lead">Airport pickup, guidance etc</p>
+    </div>
+    </div>
+  </section>
+
+<section id="about">
+	<div class="container">
+		<p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque risus felis, luctus in purus maximus, venenatis fermentum diam. Suspendisse quis turpis eu neque tempor viverra ut eget tortor. Nam rutrum, ligula quis faucibus scelerisque, ante quam dapibus dolor, eget interdum quam enim a odio. Integer dolor quam, laoreet sed arcu a, efficitur sollicitudin orci. Sed auctor finibus purus, sed eleifend enim bibendum vel. Suspendisse tempus elementum nisi, vitae bibendum elit semper sit amet. Nulla dictum volutpat sapien, eu tincidunt justo placerat eu. Integer in ligula ac erat placerat fringilla ut id tortor. Maecenas molestie est vitae arcu scelerisque tempor nec vel nibh. Vestibulum tristique enim congue orci egestas, in interdum leo elementum. Curabitur tincidunt diam libero, quis interdum libero varius nec. Proin auctor suscipit eros a convallis. Etiam varius egestas blandit.</p>
+	</div>
+</section>
+<section id="subscribe">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<h1 class="display-3">Subscribe us for more information</h1>
+				<form method="POST">
+					{%csrf_token%}
+  					<input type="text" class="form-control" placeholder="email"><br>
+  					<button class="btn btn-dark btn-lg">Submit</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>
+{%endblock%}

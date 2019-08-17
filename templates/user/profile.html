@@ -1,0 +1,86 @@
+{%extends 'dashboard/base.html'%}
+{%load staticfiles%}
+{% load socialaccount %}
+{% load crispy_forms_tags %}
+{%block title%}Agent Profile{%endblock%}
+{%block description%}View the agent's profile details{%endblock%}
+{%block content%}
+<br>
+<div class="profile">
+<img src="{{details.image.url}}">
+<h3 class="agent-name">{{details.user}}</h3>
+
+<div class="container-profile">
+	<div class="profile-heading" style="background-color: #333; margin-top: 0; width: 100%; color: white;">
+		<p class="lead">Profile</p>
+	</div>
+	<p>User type : <strong>{% if details.user_type == "A" %}Agent{%else%}Student{%endif%}</strong></p>
+	<p>Country : <strong>{{details.country}}</strong></p>
+	{% if details.featured == True %}
+		<p>Verified  <i class="icon fa fa-star icon-verified"></i> </p>
+	{%endif%}
+</div>
+<div class="container-profile">
+	<div class="profile-heading" style="background-color: #333; margin-top: 0; width: 100%; color: white;">
+		<p class="lead">Students</p>
+	</div>
+	<p>Students applied : <strong>12</strong></p>
+	<p>Success rate: <strong>97%</strong></p>
+</div>
+<div class="container-profile">
+	<div class="profile-heading" style="background-color: #333; margin-top: 0; width: 100%; color: white;">
+		<p class="lead">Scholarships</p>
+	</div>
+	<div class="agent-scholarships">
+		
+			<table class="table">
+				  <thead class="thead-light">
+				    <tr>
+				      <th scope="col">#</th>
+				      <th scope="col">University</th>
+				      <th scope="col">Tuition</th>
+				      <th scope="col">Accomodation</th>
+				      <th scope="col">Stipend</th>
+				    </tr>
+				  </thead>
+				  {%for scholarship in scholarships%}
+				  <tbody>
+				    <tr>
+				      <th scope="row"><img src="{{scholarship.university.logo.url}}" style="width: 50px; height: auto"><br>
+				      	{% if scholarship.agent.id == user.id %}
+				      	<a href="{%url 'dashboard:scholarship_edit' id=scholarship.id%}">Edit</a>
+				      	<a href="">Delete</a>
+				      	{%endif%}
+				      </th>
+				      <td><a href="{%url 'dashboard:scholarship_view' id=scholarship.id%}">{{scholarship.university}}</a></td>
+				      <td>{{scholarship.tuition_after_schol}} RMB</td>
+				      <td>{{scholarship.accomodation_after_schol}} RMB</td>
+				      <td>{{scholarship.stipend}} RMB</td>
+				    </tr>
+			</tbody>
+			{%endfor%}
+			</table>
+		
+	</div>
+</div>
+<div class="container-profile">
+	<div class="profile-heading" style="background-color: #333; margin-top: 0; width: 100%; color: white;">
+		<p class="lead">Contact</p>
+	</div>
+	<div class="icon-contact">
+		<div class="contact">
+			<i class="icon fa fa-wechat icon-verified fa-4x"></i>
+		</div>
+		<div class="contact">
+			<i class="icon fa fa-instagram icon-verified fa-4x"></i>
+		</div>
+		<div class="contact">
+			<i class="icon fa fa-facebook icon-verified fa-4x"></i>
+		</div>
+		<div class="contact">
+			<i class="icon fa fa-phone icon-verified fa-4x"></i>
+		</div>
+	</div>
+</div>
+
+{%endblock%}

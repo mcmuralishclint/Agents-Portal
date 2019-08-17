@@ -1,0 +1,58 @@
+{%extends 'dashboard/base.html'%}
+{%load staticfiles%}
+{% load socialaccount %}
+{%block title%}Find a scholarship and apply!{%endblock%}
+{%block description%}Verified scholarship from verified agents.{%endblock%}
+{%block content%}
+  <!-- Scholarships -->
+
+<section id="pricing">
+<div class="container pricing-container">
+<div class="row">
+	{%for scholarship in scholarships%}
+  <div class="pricing-column col-lg-4  col-md-6">
+    <div class="card h-100">
+
+      <div class="card-header">
+        <h5>{{scholarship.university}}</h5>
+        <p class="lead"><strong class="agent-name">{{scholarship.university.city}}</strong></p>
+      </div>
+      <div class="card-body">
+            {%if scholarship.schol_type == "P"%}<h4>Partial Scholarship</h4>{%else%}<h4>Full Scholarship</h4>{%endif%}
+            <p><span>Tuition - </span> {{scholarship.tuition_after_schol}} RMB</p>
+            <p><span>Accomodation - </span> {{scholarship.accomodation_after_schol}} RMB</p>
+            <p><span>Stipend - </span> {{scholarship.stipend}} RMB</p>
+            <p><span>Service charge - </span> ${{scholarship.service_charge}}</p><br>
+
+
+      </div>
+      <div class="user-buttons">
+            <a href="{%url 'dashboard:scholarship_view' id=scholarship.id%}" class="btn btn-primary btn-lg" role="button">View Scholarship</a>
+            <p><strong class="agent-name"><a href="{%url 'user:profile' id=scholarship.agent.user_detail.id%}">{{scholarship.agent}}</a></strong></p>
+            </div>
+    </div>
+  </div>
+   {%endfor%}
+ 
+  </div>
+  <div class="pagination">
+    <span class="step-links">
+        {% if scholarships.has_previous %}
+            <a href="?page=1">&laquo; first</a> |
+            <a href="?page={{ scholarships.previous_page_number }}">previous</a>
+        {% endif %}
+        <br>
+        <span class="current">
+            Page {{ scholarships.number }} of {{ scholarships.paginator.num_pages }}.
+        </span>
+        <br>
+        {% if scholarships.has_next %}
+            <a href="?page={{ scholarships.next_page_number }}">next</a> |
+            <a href="?page={{ scholarships.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+</div>
+  </section>
+
+{%endblock%}
