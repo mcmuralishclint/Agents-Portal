@@ -31,4 +31,4 @@ the payment method will be very secure and the students can track their scholars
 - Reports for users
 - Update and track applied students
 - Upload documents
-
+- Search Engine
